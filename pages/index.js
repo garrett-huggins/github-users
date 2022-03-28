@@ -9,11 +9,13 @@ import {
 } from "@chakra-ui/react";
 import UserCard from "../components/card";
 import { useEffect, useState } from "react";
+import Error from "../components/error";
 
 export default function Home() {
   const [avatar, setAvatar] = useState("");
   const [userName, setUserName] = useState("");
   const [followers, setFollowers] = useState("");
+  const [error, setError] = useState(false);
 
   const [userInput, setUserInput] = useState("");
 
@@ -40,8 +42,11 @@ export default function Home() {
     fetch(`https://api.github.com/users/${userInput}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        setData(data);
+        if (data.message) {
+          setError(true);
+        } else {
+          setData(data);
+        }
       });
   };
 
@@ -63,7 +68,11 @@ export default function Home() {
         </Button>
       </FormControl>
       <Box>
-        <UserCard avatar={avatar} userName={userName} followers={followers} />
+        {error ? (
+          <Error></Error>
+        ) : (
+          <UserCard avatar={avatar} userName={userName} followers={followers} />
+        )}
       </Box>
     </Container>
   );
