@@ -68,7 +68,7 @@ export default function Home() {
           Submit
         </Button>
       </FormControl>
-      <Box align="center">
+      <Box mt={14} align="center">
         {error ? (
           <Error></Error>
         ) : (

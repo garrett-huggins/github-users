@@ -6,7 +6,7 @@ function UserCard(props) {
 
   return (
     <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
-      <Image src={avatar} alt="Avatar" />
+      <Image src={avatar} alt="Avatar" width="400px" />
       <Heading>{userName}</Heading>
       <Heading>{followers}</Heading>
     </Box>
