@@ -56,8 +56,8 @@ export default function Home() {
       <Box>
         <Heading>GitHub Users</Heading>
       </Box>
-      <FormControl>
-        <FormLabel htmlFor="name">Name</FormLabel>
+      <FormControl onSubmit={handleSubmit} display="flex" alignItems="center">
+        <FormLabel htmlFor="name">Username</FormLabel>
         <Input
           id="name"
           type="name"
@@ -68,7 +68,7 @@ export default function Home() {
           Submit
         </Button>
       </FormControl>
-      <Box>
+      <Box align="center">
         {error ? (
           <Error></Error>
         ) : (
