@@ -45,6 +45,7 @@ export default function Home() {
         if (data.message) {
           setError(true);
         } else {
+          setError(false);
           setData(data);
         }
       });
