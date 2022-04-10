@@ -16,7 +16,7 @@ function UserCard(props) {
       >
         <Heading mb={2}>{userName}</Heading>
         <Image
-          border="5px solid"
+          border="2px solid"
           borderColor="grey"
           borderRadius="md"
           src={avatar}
