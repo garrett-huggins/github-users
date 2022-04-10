@@ -71,7 +71,7 @@ export default function Home() {
           onChange={handleSearch}
           mr="1em"
         />
-        <Button type="submit" onClick={handleSubmit}>
+        <Button w="200px" type="submit" onClick={handleSubmit}>
           Submit
         </Button>
       </FormControl>
