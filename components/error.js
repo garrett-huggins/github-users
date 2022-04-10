@@ -1,9 +1,10 @@
-import { Container } from "@chakra-ui/react";
+import { Container, Heading, Text } from "@chakra-ui/react";
 
 function Error() {
   return (
     <Container>
-      <h1>Error</h1>
+      <Heading>Error</Heading>
+      <Text fontSize="3xl">GitHub user not found</Text>
     </Container>
   );
 }

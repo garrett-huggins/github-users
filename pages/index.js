@@ -16,13 +16,17 @@ export default function Home() {
   const [userName, setUserName] = useState("");
   const [followers, setFollowers] = useState("");
   const [error, setError] = useState(false);
+  const [name, setName] = useState("");
+  const [following, setFollowing] = useState("");
 
   const [userInput, setUserInput] = useState("");
 
-  const setData = ({ avatar_url, login, followers, following }) => {
+  const setData = ({ avatar_url, login, followers, following, name }) => {
     setAvatar(avatar_url);
     setUserName(login);
     setFollowers(followers);
+    setFollowing(following);
+    setName(name);
   };
 
   // useEffect(() => {
@@ -54,15 +58,18 @@ export default function Home() {
   return (
     <Container>
       <Box>
-        <Heading>GitHub Users</Heading>
+        <Heading align="center" mb="15px">
+          GitHub User Trading Cards
+        </Heading>
       </Box>
       <FormControl display="flex" alignItems="center">
-        <FormLabel htmlFor="name">Username</FormLabel>
+        <FormLabel htmlFor="name">GitHub&nbsp;Username:</FormLabel>
         <Input
           id="name"
           type="name"
           value={userInput}
           onChange={handleSearch}
+          mr="1em"
         />
         <Button type="submit" onClick={handleSubmit}>
           Submit
@@ -72,7 +79,13 @@ export default function Home() {
         {error ? (
           <Error></Error>
         ) : (
-          <UserCard avatar={avatar} userName={userName} followers={followers} />
+          <UserCard
+            avatar={avatar}
+            userName={userName}
+            followers={followers}
+            following={following}
+            name={name}
+          />
         )}
       </Box>
     </Container>
